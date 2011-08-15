@@ -1,0 +1,80 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>nimmo.template</groupId>
+	<artifactId>fpml</artifactId>
+	<version>1.0</version>
+	<packaging>jar</packaging>
+
+	<name>fpml</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.xml.bind</groupId>
+			<artifactId>jaxb-impl</artifactId>
+			<version>2.1.3</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jaxb2-maven-plugin</artifactId>
+				<version>1.3</version>
+				<executions>
+					<execution>
+						<id>confirmation</id>
+						<goals>
+							<goal>xjc</goal>
+						</goals>
+						<configuration>
+							<bindingDirectory>${basedir}/src/main/schema/</bindingDirectory>
+							<packageName>org.fpml.confirmation</packageName>
+							<schemaDirectory>${basedir}/src/main/schema/confirmation/</schemaDirectory>
+							<schemaFiles>fpml-main-5-1.xsd</schemaFiles> 
+							<outputDirectory>${basedir}/src/main/generated-source/</outputDirectory>
+							<staleFile>${project.build.directory}/generated-sources/jaxb/generate-confirmation/.staleFlag</staleFile>
+							<clearOutputDir>false</clearOutputDir>
+						</configuration>
+					</execution>
+					<execution>
+						<id>reporting</id>
+						<goals>
+							<goal>xjc</goal>
+						</goals>
+						<configuration>
+							<bindingDirectory>${basedir}/src/main/schema/</bindingDirectory>
+							<packageName>org.fpml.reporting</packageName>
+							<schemaDirectory>${basedir}/src/main/schema/reporting/</schemaDirectory>
+							<schemaFiles>fpml-main-5-1.xsd</schemaFiles> 
+							<outputDirectory>${basedir}/src/main/generated-source/</outputDirectory>
+							<staleFile>${project.build.directory}/generated-sources/jaxb/generate-reporting/.staleFlag</staleFile>
+							<clearOutputDir>false</clearOutputDir>
+						</configuration>
+					</execution>
+				</executions>
+				<configuration>
+					<bindingDirectory>${basedir}/src/main/schema/</bindingDirectory>
+					<packageName>org.fpml.confirmation</packageName>
+					<schemaDirectory>${basedir}/src/main/schema/confirmation/</schemaDirectory>
+					<outputDirectory>${basedir}/src/main/generated-source/</outputDirectory>
+					<staleFile>${project.build.directory}/generated-sources/jaxb/generate-confirmation/.staleFlag</staleFile>
+					<clearOutputDir>false</clearOutputDir>
+				</configuration>
+			</plugin>
+		</plugins>
+
+	</build>
+
+</project>
