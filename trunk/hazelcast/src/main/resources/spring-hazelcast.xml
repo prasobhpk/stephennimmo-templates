@@ -11,15 +11,16 @@
 
 	<context:component-scan base-package="nimmo.template" />
 	
-	<context:property-placeholder location="classpath:spring.properties" />
+	<context:property-placeholder location="classpath:spring-hazelcast.properties" />
 
 	<context:annotation-config />
 	<tx:annotation-driven transaction-manager="transactionManager" />
 	
-	<hz:hazelcast id="instance">
+	<hz:hazelcast id="hazelcastInstance">
 		<hz:config>
-			<hz:map name="Person">
-				<hz:map-store enabled="true" implementation="personMapStore" write-delay-seconds="5" />
+			<hz:group password="test" name="test"/>
+			<hz:map name="MarketDataPrice">
+				<hz:map-store enabled="true" implementation="marketDataPriceMapStore" write-delay-seconds="5" />
 			</hz:map>
 		</hz:config>
 	</hz:hazelcast>
