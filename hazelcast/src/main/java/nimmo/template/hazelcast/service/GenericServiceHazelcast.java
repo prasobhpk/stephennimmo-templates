@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import nimmo.template.hazelcast.object.Entity;
 
-import com.hazelcast.core.Hazelcast;
 import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.core.IMap;
 import com.hazelcast.core.Transaction;

@@ -2,6 +2,8 @@ package nimmo.template.hazelcast.object;
 
 import java.io.Serializable;
 
+import org.apache.commons.lang.builder.ToStringBuilder;
+
 @SuppressWarnings("serial")
 public abstract class AbstractEntity implements Entity<Serializable> {
 	
@@ -16,6 +18,11 @@ public abstract class AbstractEntity implements Entity<Serializable> {
 	@Override
 	public int hashCode() {
 		return getKey().hashCode();
+	}
+	
+	@Override
+	public String toString() {
+		return ToStringBuilder.reflectionToString(this);
 	}
 
 }
