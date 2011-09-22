@@ -5,10 +5,14 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MarketDataServer {
 	
-	ApplicationContext applicationContext;
+	private static ApplicationContext applicationContext;
 	
 	public void start(){
 		applicationContext = new ClassPathXmlApplicationContext("classpath:spring-hazelcast.xml");
+	}
+	
+	public static Object getBean(String name){
+		return applicationContext.getBean(name);
 	}
 	
 	public static void main(String[] args) {
