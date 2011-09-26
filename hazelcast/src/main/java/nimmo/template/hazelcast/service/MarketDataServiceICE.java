@@ -6,17 +6,16 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Random;
 
+import nimmo.template.hazelcast.object.MarketDataPrice;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import nimmo.template.hazelcast.object.MarketDataPrice;
-
 import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.core.IMap;
-import com.hazelcast.core.IQueue;
 import com.hazelcast.core.ITopic;
 import com.hazelcast.core.MessageListener;
 
@@ -35,7 +34,7 @@ public class MarketDataServiceICE implements MarketDataService, InitializingBean
 	BigDecimal tick = new BigDecimal(".01");
 	
 	private void init(){
-		marketDataPriceMap = hazelcastInstance.getMap("MarketDataPrice");
+		marketDataPriceMap = hazelcastInstance.getMap("MarketDataPrice|CL");
 		symbols = getSymbols();
 		for (String symbol : symbols) {
 			ITopic<MarketDataPrice> marketDataPriceTopic = hazelcastInstance.getTopic(symbol);
@@ -49,6 +48,9 @@ public class MarketDataServiceICE implements MarketDataService, InitializingBean
 		MarketDataPrice mdp;
 		while (true){
 			mdp = marketDataPriceMap.get(symbols.get(random.nextInt(symbols.size())));
+			if (mdp == null){
+				continue;
+			}
 			mdp.setCalendar(Calendar.getInstance());
 			if (random.nextBoolean() == true){
 				mdp.setPrice(mdp.getPrice().add(tick));
