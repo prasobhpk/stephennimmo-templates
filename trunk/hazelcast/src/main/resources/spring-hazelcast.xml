@@ -19,7 +19,7 @@
 	<hz:hazelcast id="hazelcastInstance">
 		<hz:config>
 			<hz:group password="test" name="test"/>
-			<hz:map name="MarketDataPrice">
+			<hz:map name="MarketDataPrice*">
 				<hz:map-store enabled="true" implementation="marketDataPriceMapStore" write-delay-seconds="5" />
 			</hz:map>
 		</hz:config>
