@@ -34,7 +34,7 @@ public class GenericRepositoryHibernate<ID extends Serializable, T> extends Hibe
     }
  
     public T saveOrUpdate(T entity) {
-    	getHibernateTemplate().saveOrUpdate(entity);
+    	getHibernateTemplate().save(entity);
         return entity;
     }
     

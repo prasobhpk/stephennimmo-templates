@@ -2,6 +2,7 @@ package nimmo.template.servicelayer.service;
 
 import java.util.List;
 
+import nimmo.template.servicelayer.dto.Job;
 import nimmo.template.servicelayer.dto.Person;
 
 import org.junit.Test;
@@ -23,13 +24,16 @@ public class PersonServiceTest {
 	@Autowired PersonService personService;
 	
 	@Test
-	@Rollback(true)
+	@Rollback(false)
 	public void testSaveOrUpdate() {
-		Person person = new Person(1234, "Bob", "Sanchez");
+		Person person = new Person(System.currentTimeMillis(), "Bob", "Sanchez");
+		Job job = new Job(System.currentTimeMillis()+3, "testjob");
+		job.setPerson(person);
+		person.getJobs().add(job);
 		person = personService.saveOrUpdate(person);
 		Assert.notNull(person);
 	}
-	
+	/*
 	@Test
 	@Rollback(true)
 	public void testFindAll() {
@@ -46,5 +50,6 @@ public class PersonServiceTest {
 		Person person = personService.findById(1234);
 		Assert.notNull(person);
 	}
+	*/
 
 }

@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="nimmo.template.servicelayer.dto" default-lazy="false">
-	<class name="Person">
-		<id name="personId" />
-		<property name="firstName" />
-		<property name="lastName" />
-		<set name="jobs" cascade="save-update">
-    		<key column="personId"/>
-    		<one-to-many class="Job"/>
-		</set>
+	<class name="Job">
+		<id name="jobId" />
+		<property name="jobName" />
 	</class>
 </hibernate-mapping>
