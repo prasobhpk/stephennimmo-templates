@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class PersonRepositoryHibernate extends GenericRepositoryHibernate<Integer, Person> implements PersonRepository {
-
+	
 }
