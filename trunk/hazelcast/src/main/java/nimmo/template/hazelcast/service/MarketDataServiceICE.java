@@ -69,6 +69,7 @@ public class MarketDataServiceICE implements MarketDataService, InitializingBean
 
 	public void afterPropertiesSet() throws Exception {
 		init();
+		//TODO dont let this start
 		start();
 	}
 	
