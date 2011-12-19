@@ -18,12 +18,10 @@ public class StringPrinter implements KeyedRunnable<String> {
 		System.out.println(Thread.currentThread().getName() + " " + aString);
 	}
 	
-	@Override
 	public String getKey() {
 		return key;
 	}
 	
-	@Override
 	public String getDependentKey() {
 		return dependentKey;
 	}
