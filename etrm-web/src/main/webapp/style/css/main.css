@@ -1,0 +1,40 @@
+body, td {
+	font-size: 12px;
+}
+
+.edit-table td {
+	vertical-align: top;
+}
+
+.ui-menuitem-text {
+	font-size: 12px;
+}
+
+.ui-panelgrid {
+	font-size: 12px;
+}
+
+.ui-datatable {
+	font-size: 12px;
+}
+
+.ui-datatable-data {
+	font-size: 12px;
+}
+
+.ui-datatable-header {
+	font-size: 12px;
+}
+
+.ui-datatable-footer {
+	font-size: 12px;
+}
+
+.ui-sortable-column {
+	font-size: 12px;
+}
+
+.ui-paginator {
+	font-size: 12px;
+}
+
