@@ -6,7 +6,7 @@ import javax.faces.bean.SessionScoped;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.codemkr.etrm.core.service.TradeService;
+import com.codemkr.etrm.service.TradeService;
 
 @ManagedBean
 @SessionScoped
@@ -16,6 +16,4 @@ public class TradeCaptureBean extends AbstractBean {
 	@Autowired
 	TradeService tradeService;
 	
-	
-
 }

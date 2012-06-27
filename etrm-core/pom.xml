@@ -3,19 +3,19 @@
 	<modelVersion>4.0.0</modelVersion>
 	
 	<parent>
-		<groupId>com.codemkr</groupId>
-		<artifactId>etrm</artifactId>
+		<groupId>com.codemkr.etrm</groupId>
+		<artifactId>parent</artifactId>
 		<version>1.0</version>
 		<relativePath>../etrm</relativePath>
 	</parent>
-	<artifactId>etrm-core</artifactId>
+	<artifactId>core</artifactId>
 
 	<dependencies>
-
+	
 		<dependency>
-			<groupId>com.hazelcast</groupId>
-			<artifactId>hazelcast-all</artifactId>
-			<version>2.1.2</version>
+			<groupId>com.codemkr.etrm</groupId>
+			<artifactId>common</artifactId>
+			<version>1.0</version>
 		</dependency>
 
 		<dependency>

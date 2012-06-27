@@ -6,34 +6,35 @@ import javax.faces.bean.SessionScoped;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.codemkr.etrm.core.object.User;
-import com.codemkr.etrm.core.service.AdministrationService;
+import com.codemkr.etrm.object.ApplicationUser;
+import com.codemkr.etrm.service.AdministrationService;
 
 @ManagedBean
 @SessionScoped
 @Component
 public class SessionBean extends AbstractBean {
 
-	@Autowired AdministrationService administrationService;
+	@Autowired 
+	AdministrationService administrationService;
 	
-	private User user;
+	private ApplicationUser applicationUser;
 	
 	private String login = "snimmo";
 	private String password = "password";
 
 	public String login() {
-		user = administrationService.findUser(login, password); 
-		if (user == null){
+		applicationUser = administrationService.findUser(login, password); 
+		if (applicationUser == null){
 			addError("Invalid Login and/or Password.", "Please try again or contact customer support");
 			return "login";
 		}
-		putCurrentUser(user);
-		addGrowl("User Logged In", "User " + user.getDisplayName() + " is logged in.");
+		putCurrentUser(applicationUser);
+		addGrowl("User Logged In", "User is logged in.");
 		return "home";
 	}
 	
-	public User getUser() {
-		return user;
+	public ApplicationUser getApplicationUser() {
+		return applicationUser;
 	}
 
 	public String getLogin() {

@@ -16,21 +16,22 @@
 
 	<context:property-placeholder location="classpath:spring-etrm-core.properties" />
 	
-	<context:component-scan base-package="com.codemkr.etrm.core" />
+	<context:component-scan base-package="com.codemkr.etrm" />
 	<jpa:repositories 		base-package="com.codemkr.etrm.core.repository" />
 	 
 	<hz:hazelcast id="hazelcastInstance">
 		<hz:config>
 			<hz:group password="test" name="test" />
+			<hz:map name="ApplicationUser">
+				<hz:map-store enabled="true" implementation="applicationUserMapStore" write-delay-seconds="2" />
+			</hz:map>
 			<hz:map name="Trade">
 				<hz:map-store enabled="true" implementation="tradeMapStore" write-delay-seconds="2" />
 			</hz:map>
-			<hz:map name="FixConnection">
-				<hz:map-store enabled="true" implementation="fixConnectionMapStore" write-delay-seconds="2" />
-			</hz:map>
-			
 		</hz:config>
 	</hz:hazelcast>
+	<hz:map id="applicationUserMap" name="ApplicationUser" instance-ref="hazelcastInstance"/>
+	<hz:idGenerator id="applicationUserIdGenerator" name="applicationUserIdGenerator" instance-ref="hazelcastInstance"/>
 	<hz:map id="tradeMap" name="Trade" instance-ref="hazelcastInstance"/>
 	<hz:idGenerator id="tradeIdGenerator" name="tradeIdGenerator" instance-ref="hazelcastInstance"/>
 

@@ -5,6 +5,8 @@ import java.io.IOException;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
+import com.codemkr.etrm.web.bean.SessionBean;
+
 public class AuthenticationFilter implements Filter {
 
 	@SuppressWarnings("unused")
@@ -15,7 +17,7 @@ public class AuthenticationFilter implements Filter {
 		HttpServletResponse response = (HttpServletResponse) resp;
 		String servletPath = request.getServletPath();
 		HttpSession httpSession = request.getSession();
-		if (servletPath.endsWith("/login.html") || httpSession.getAttribute("user") != null) {
+		if (servletPath.endsWith("/login.html") || httpSession.getAttribute(SessionBean.SESSION_APPLICATION_USER) != null) {
 			chain.doFilter(req, resp);
 		} else {
 			response.sendRedirect("login.html");

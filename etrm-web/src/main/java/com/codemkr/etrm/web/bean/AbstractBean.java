@@ -4,20 +4,20 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 
-import com.codemkr.etrm.core.object.User;
+import com.codemkr.etrm.object.ApplicationUser;
 
 public abstract class AbstractBean {
 	
-	public static final String SESSION_USER = "user";
+	public static final String SESSION_APPLICATION_USER = "APPLICATION_USER";
 	
-	protected User getCurrentUser(){
+	protected ApplicationUser getCurrentUser(){
 		ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();
-		return (User)externalContext.getSessionMap().get(SESSION_USER);
+		return (ApplicationUser)externalContext.getSessionMap().get(SESSION_APPLICATION_USER);
 	}
 	
-	protected void putCurrentUser(User user){
+	protected void putCurrentUser(ApplicationUser user){
 		ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();
-		externalContext.getSessionMap().put(SESSION_USER, user);
+		externalContext.getSessionMap().put(SESSION_APPLICATION_USER, user);
 	}
 	
 	protected void addGrowl(String summary, String detail){
