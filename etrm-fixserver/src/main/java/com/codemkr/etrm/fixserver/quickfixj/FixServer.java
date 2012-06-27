@@ -28,7 +28,6 @@ import quickfix.SessionID;
 import quickfix.SessionSettings;
 import quickfix.ThreadedSocketAcceptor;
 
-import com.codemkr.etrm.core.object.FixConnection;
 import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.core.IMap;
 
@@ -47,6 +46,7 @@ public class FixServer {
     }
     
     private void initializeFixConnections() throws RuntimeError, ConfigError, FileNotFoundException, JMException {
+    	/*
     	IMap<Long, FixConnection> map = hazelcastInstance.getMap(FixConnection.class.getSimpleName());
     	SessionSettings sessionSettings = new SessionSettings();
     	sessionSettings.setString(Session.SETTING_USE_DATA_DICTIONARY, "N");
@@ -74,6 +74,7 @@ public class FixServer {
         JmxExporter jmxExporter = new JmxExporter();
         jmxExporter.export(acceptor);
         acceptor.start();    	
+        */
     }
     
 }

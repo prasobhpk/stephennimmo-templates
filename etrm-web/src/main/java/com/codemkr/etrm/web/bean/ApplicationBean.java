@@ -7,8 +7,7 @@ import javax.faces.context.FacesContext;
 
 import org.springframework.stereotype.Component;
 
-import com.codemkr.etrm.web.object.ApplicationUser;
-
+import com.codemkr.etrm.object.ApplicationUser;
 
 @ManagedBean
 @SessionScoped

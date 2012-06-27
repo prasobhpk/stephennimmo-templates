@@ -30,7 +30,7 @@ public class SessionBean extends AbstractBean {
 		}
 		putCurrentUser(applicationUser);
 		addGrowl("User Logged In", "User is logged in.");
-		return "home";
+		return "home?faces-redirect=true";
 	}
 	
 	public ApplicationUser getApplicationUser() {
