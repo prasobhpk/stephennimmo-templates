@@ -5,6 +5,7 @@ public class Trade extends AbstractDomainObject {
 	private static final long serialVersionUID = -2062160938269110010L;
 
 	private Long tradeUid;
+	private Product product;
 	private String comments;
 
 	public Long getTradeUid() {
@@ -12,6 +13,12 @@ public class Trade extends AbstractDomainObject {
 	}
 	public void setTradeUid(Long tradeUid) {
 		this.tradeUid = tradeUid;
+	}
+	public Product getProduct() {
+		return product;
+	}
+	public void setProduct(Product product) {
+		this.product = product;
 	}
 	public String getComments() {
 		return comments;
