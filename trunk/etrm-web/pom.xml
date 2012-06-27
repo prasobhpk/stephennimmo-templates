@@ -3,13 +3,13 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>com.codemkr</groupId>
-		<artifactId>etrm</artifactId>
+		<groupId>com.codemkr.etrm</groupId>
+		<artifactId>parent</artifactId>
 		<version>1.0</version>
 		<relativePath>../etrm</relativePath>
 	</parent>
 
-	<artifactId>etrm-web</artifactId>
+	<artifactId>web</artifactId>
 	<packaging>war</packaging>
 
 	<properties>
@@ -20,8 +20,8 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.codemkr</groupId>
-			<artifactId>etrm-core</artifactId>
+			<groupId>com.codemkr.etrm</groupId>
+			<artifactId>common</artifactId>
 			<version>1.0</version>
 		</dependency>
 		<dependency>

@@ -3,8 +3,8 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>com.codemkr</groupId>
-		<artifactId>etrm</artifactId>
+		<groupId>com.codemkr.etrm</groupId>
+		<artifactId>parent</artifactId>
 		<version>1.0</version>
 	</parent>
 	<artifactId>fixserver</artifactId>
@@ -15,8 +15,8 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.codemkr</groupId>
-			<artifactId>etrm-core</artifactId>
+			<groupId>com.codemkr.etrm</groupId>
+			<artifactId>common</artifactId>
 			<version>1.0</version>
 		</dependency>
 		<dependency>
