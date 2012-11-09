@@ -3,79 +3,32 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.occupytheserver</groupId>
-	<artifactId>demo</artifactId>
+	<groupId>com.stephennimmo.demo</groupId>
+	<artifactId>parent</artifactId>
 	<version>1.0</version>
 	<packaging>pom</packaging>
 
 	<name>demo</name>
-	<description>Demo library for templating purposes</description>
-	<url>http://www.occupytheserver.com</url>
+	<description>Demo library for template purposes</description>
+	<url>http://www.stephennimmo.com</url>
 
 	<developers>
 		<developer>
 			<id>stephennimmo</id>
 			<name>Stephen Nimmo</name>
-			<email>stephen@occupytheserver.com</email>
+			<email>stephennimmo@gmail.com</email>
 		</developer>
 	</developers>
 
 	<modules>
-		<module>demo-etrm</module>
-		<module>demo-jpa</module>
-		<module>demo-jsf</module>
-		<module>demo-quickfixj</module>
+		<!-- module>demo-etrm</module-->
 	</modules>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<junit.version>4.10</junit.version>
-		<spring.version>3.1.0.RELEASE</spring.version>
-		<slf4j.version>1.6.4</slf4j.version>
+		<source.version>1.7</source.version>
+		<target.version>1.7</target.version>
 	</properties>
-
-	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>${junit.version}</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context</artifactId>
-			<version>${spring.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-test</artifactId>
-			<version>${spring.version}</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>${slf4j.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
-			<version>${slf4j.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>joda-time</groupId>
-			<artifactId>joda-time</artifactId>
-			<version>1.6</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-lang</groupId>
-			<artifactId>commons-lang</artifactId>
-			<version>2.3</version>
-		</dependency>
-	</dependencies>
 
 	<build>
 		<pluginManagement>
@@ -84,8 +37,8 @@
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
 					<configuration>
-						<source>1.7</source>
-						<target>1.7</target>
+						<source>${source.version}</source>
+						<target>${target.version}</target>
 						<showWarnings>true</showWarnings>
 					</configuration>
 				</plugin>
