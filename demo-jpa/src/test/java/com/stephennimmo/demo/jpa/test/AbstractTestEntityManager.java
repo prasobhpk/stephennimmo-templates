@@ -7,17 +7,9 @@ import javax.persistence.Persistence;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
-import org.junit.Test;
 
-import com.stephennimmo.demo.jpa.ApplicationUser;
-
-public class TestApplicationUserEntityManager {
-
-	@Test
-	public void testInsert() {
-		entityManager.persist(new ApplicationUser());
-	}
-
+public abstract class AbstractTestEntityManager {
+	
 	private static final String TEST_UNIT_NAME = "demoManager";
 	protected static EntityManagerFactory entityManagerFactory;
 	protected static EntityManager entityManager;
@@ -28,7 +20,7 @@ public class TestApplicationUserEntityManager {
 		entityManager = entityManagerFactory.createEntityManager();
 		entityManager.getTransaction().begin();
 	}
-
+	
 	@After
 	public void rollbackTransactionAndReleaseEntityManager() {
 		entityManager.getTransaction().rollback();
