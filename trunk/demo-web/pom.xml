@@ -1,15 +1,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.snimmo.demo</groupId>
-    <artifactId>web</artifactId>
-    <version>0.0.1</version>
-    <packaging>war</packaging>
+	<groupId>com.snimmo.demo</groupId>
+	<artifactId>web</artifactId>
+	<version>0.0.1</version>
+	<packaging>war</packaging>
 
-    <name>web</name>
+	<name>web</name>
 
-    <properties>
+	<properties>
 		<endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -59,8 +59,12 @@
 			<artifactId>bootstrap</artifactId>
 			<version>1.0.10</version>
 		</dependency>
-
-
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-jaxrs</artifactId>
+			<version>1.9.13</version>
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
