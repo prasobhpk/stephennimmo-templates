@@ -1,5 +1,7 @@
 package com.snimmo.demo.web.service;
 
+import java.util.List;
+
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
@@ -16,6 +18,12 @@ public class UserService {
 
     public User findById(Long id) {
         return em.find(User.class, id);
+    }
+    
+	@SuppressWarnings("unchecked")
+	public List<User> findAll(){
+    	Query query = em.createQuery("select u from User u");
+        return (List<User>) query.getResultList();
     }
     
     public User find(String userName, String password) {

@@ -18,7 +18,6 @@ import javax.servlet.http.HttpSession;
 import com.snimmo.demo.web.model.User;
 
 @WebFilter(urlPatterns="*.html", 
-
 		dispatcherTypes = {DispatcherType.REQUEST, DispatcherType.FORWARD}
 )
 
